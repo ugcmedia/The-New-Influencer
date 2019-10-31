@@ -238,6 +238,60 @@ $(document).ready(function () {
 
 	});	 
 }
+
+/*-------------- Page Landing Page----------- */
+   if (pageid == 'lp-single') {
+    var $gallery = $('.photo_gallery_box a').simpleLightbox({
+		overlay: true,
+		captions: true,
+		captionSelector: "self", 
+		captionsData : "title",
+		captionType: "attr"
+	});
+	$("a.switcher").bind("click", function(e){
+		e.preventDefault();
+		
+		var theid = $(this).attr("id");
+		var theproducts = $("ul#photoslist");
+		var classNames = $(this).attr('class').split(' ');
+		
+		
+		if($(this).hasClass("active")) {
+			// if currently clicked button has the active class
+			// then we do nothing!
+			return false;
+		} else {
+			// otherwise we are clicking on the inactive button
+			// and in the process of switching views!
+
+  			if(theid == "view13") {
+				$(this).addClass("active");
+				$("#view11").removeClass("active");
+				$("#view11").children("img").attr("src","images/switch_11.png");
+				
+				$("#view12").removeClass("active");
+				$("#view12").children("img").attr("src","images/switch_12.png");
+			
+				var theimg = $(this).children("img");
+				theimg.attr("src","images/switch_13_active.png");
+			
+				// remove the list class and change to grid
+				theproducts.removeClass("photo_gallery_box");
+				theproducts.removeClass("photo_gallery_12");
+				theproducts.addClass("photo_gallery_13");
+
+			}
+			
+			
+			
+		}
+
+	});	 
+}
+
+
+
+
 /*-------------- Page Videos----------- */
    if (pageid == 'videos') {
 		$(".videocontainer").fitVids();
@@ -271,6 +325,29 @@ $(document).ready(function () {
 			}
 		}); 
    }
+
+/*-------------- Page Landing----------- */
+   if (pageid == 'lp') {
+		var swipersliderteam = new Swiper ('.swiper-container-lp', {
+			direction: 'horizontal',
+			effect: 'slide',
+			slidesPerView: 8,
+			spaceBetween: 10,
+			pagination: {
+			el: '.swiper-pagination-lp'
+			}
+		});
+		
+		var swipersliderteam = new Swiper ('.swiper-container-lp', {
+			direction: 'horizontal',
+			effect: 'slide',
+			slidesPerView: 8,
+			spaceBetween: 10,
+			pagination: {
+			el: '.swiper-pagination-lp'
+			}
+		}); 
+   }   
 /*-------------- Page Shop----------- */
    if (pageid == 'shop') {
 		$(".qntyplusshop").on('click', function(e) { 							  
@@ -295,6 +372,8 @@ $(document).ready(function () {
 			}
 		});	
    } 
+
+ 
 /*-------------- Page Shop Item details----------- */
    if (pageid == 'shopitem') {
 		$(".qntyplusshop").on('click', function(e) { 							  

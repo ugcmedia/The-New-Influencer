@@ -1,0 +1,61 @@
+ul.page-numbers {
+	display:flex;
+	align-items:center;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+
+	li {
+		display:block;
+		margin:0px;
+		padding:0px;
+	}
+
+	a,
+	span {
+		display:block;
+		padding:10px;
+		font-size:fontsize(16);
+		font-weight:$font-weight-normal;
+	}
+
+	a {
+		color:inherit;
+
+		@include hover-focus {
+			text-decoration:underline;
+		}
+	}
+
+	.current {
+		font-weight:$font-weight-bold;
+		text-decoration:underline;
+		color:$clr-green;
+	}
+
+	.dots {
+		padding-left:0px;
+		padding-right:0px;
+	}
+
+	.next,
+	.prev {
+		min-width:44px;
+		padding:12px 0px 11px;
+		background:$clr-green;
+		text-align:center;
+		color:white;
+
+		svg {
+			fill:currentColor;
+		}
+	}
+
+	.next {
+		margin-left:20px;
+	}
+
+	.prev {
+		margin-right:20px;
+	}
+}

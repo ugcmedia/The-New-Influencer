@@ -1,0 +1,27 @@
+.modal-dialog {
+	@include media-breakpoint-down(xs) {
+		margin:0px;
+	}
+}
+
+.modal-content {
+	border-radius:0px;
+
+	@include media-breakpoint-down(xs) {
+		min-height:100vh;
+	}
+	
+	> .close {
+		position:absolute;
+		top:20px;
+		right:20px;
+		z-index:1;
+		width:27px;
+		height:27px;
+		margin:0px;
+		padding:0px;
+		border:none;
+		border-radius:0px;
+		background:transparent;
+	}
+}

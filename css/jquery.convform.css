@@ -154,8 +154,9 @@ div.conv-form-wrapper {
 }
 div.conv-form-wrapper div.wrapper-messages {
     position: relative;
-    height: 590px;
-    max-height: 78vh;
+    display: contents;
+    height: 100%;
+    max-height: 90vh;
     overflow-y: scroll;
     transition: margin 0.1s;
 }
@@ -171,8 +172,29 @@ div.conv-form-wrapper div.wrapper-messages {
     background: linear-gradient(#fff, transparent);
 }*/
 @media (max-width: 767px) {
-    div.conv-form-wrapper div.wrapper-messages, div.conv-form-wrapper div#messages {
+    div.conv-form-wrapper div#messages {
         max-height: 71vh;
+    }
+}
+
+@media (min-height: 700px) {
+    div.conv-form-wrapper div#messages {
+        max-height: 75vh;
+    }
+}
+@media (min-height: 800px) {
+    div.conv-form-wrapper div#messages {
+        max-height: 78vh;
+    }
+}
+@media (min-height: 900px) {
+    div.conv-form-wrapper div#messages {
+        max-height: 80vh;
+    }
+}
+@media (min-height: 1000px) {
+    div.conv-form-wrapper div#messages {
+        max-height: 83vh;
     }
 }
 

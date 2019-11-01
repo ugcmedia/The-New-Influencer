@@ -1,0 +1,54 @@
+.get-in-touch__panel {
+	display:flex;
+	padding:25px 0px 0px;
+
+	& + & {
+		margin-top:25px;
+		border-top:2px solid $primary;
+	}
+
+	&__details {
+		font-size:fontsize(18);
+		font-weight:$font-weight-bold;
+
+		h6 {
+			font-size:inherit;
+			font-weight:inherit;
+		}
+
+		p {
+			color:$secondary;
+
+			a {
+				color:inherit;
+			}
+		}
+	}
+
+	&__actions {
+		margin-left:auto;
+	}
+
+	&__action {
+		// NOTE: These styles are also used by the links on Team Profile pages
+		display:inline-flex;
+		align-items:center;
+		justify-content:center;
+		width:40px;
+		height:40px;
+		border:1px solid $primary;
+		color:$primary;
+		transition:background 300ms ease, color 300ms ease;
+
+		svg {
+			width:24px;
+			height:24px;
+			fill:currentColor;
+		}
+
+		@include hover-focus {
+			background:$primary;
+			color:white;
+		}
+	}
+}

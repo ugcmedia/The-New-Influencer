@@ -1,0 +1,150 @@
+/** Mixins **/
+
+@mixin block-color-before($color) {
+	position: relative;
+
+	&:before {
+		content: '';
+		background: $color;
+		position: absolute;
+		width: 100%;
+		left: -100%;
+		top: 0;
+		bottom: 0;
+	}
+}
+
+@mixin block-color-after($color) {
+	position: relative;
+
+	&:after {
+		content: '';
+		background: $color;
+		position: absolute;
+		width: 100%;
+		right: -100%;
+		top: 0;
+		bottom: 0;
+	}
+}
+
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: "";
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+
+	-webkit-animation: $animations;
+	-moz-animation: $animations;
+	-o-animation: $animations;
+	animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@mixin font-smoothing($value: on) {
+	@if $value == on {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	@else {
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
+}
+
+@mixin fonts($typeface, $fontsize, $lineheight) {
+	font-family:$typeface;
+	font-size:fontsize($fontsize);
+	line-height:lineheight($lineheight, $fontsize);
+}
+
+@function fontsize($pixels, $basepx: $font-size-base) {
+    @if $pixels == inherit {
+        @return inherit;
+    }
+    @else {
+        @return #{$pixels / 16}rem;
+    }
+}
+
+@function lineheight($pixels, $fontsize: $font-size-base) {
+    @if $pixels == inherit {
+        @return inherit;
+    }
+    @else {
+        @return #{$pixels / strip-unit($fontsize)};
+    }
+}
+
+@function letterspacing($pixels, $fontsize: $font-size-base) {
+	@if $pixels == inherit {
+		@return inherit;
+	}
+	@else {
+		@return #{$pixels / strip-unit($fontsize)}em;
+	}
+}
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+@function rem($pixels) {
+	@return #{$pixels / 16}rem;
+}
+
+/*
+	LEAST SQUARES REGRESSION LINE CALCULATOR
+	This will generate a CSS calc function to smoothly scale between two points.
+
+	Eg:
+		on mobile (320px wide) a box is 260px tall, and on desktop (1920px wide) it's 710px tall:
+		"lsr((width: 320, height: 260), (width: 1920, height: 710))"" will return "calc((0.28125 * 100%) + 170px)"
+*/
+@function lsr($start, $end) {
+	// Extract start and end variables for convenience
+	$sW: map-get($start, width);
+	$sH: map-get($start, height);
+
+	$eW: map-get($end, width);
+	$eH: map-get($end, height);
+
+	// Difference in width and height
+	$wDiff: $eW - $sW;
+	$hDiff: $eH - $sH;
+
+	// Calculate the least squares regression components
+	$slope: $hDiff / $wDiff;
+	$x: 100%;
+	$yintercept: ($sH - ($slope * $sW));
+
+	// Least squares regression line equation: "y = mx + b"
+	@return calc((#{$slope} * #{$x}) + #{$yintercept}px);
+}

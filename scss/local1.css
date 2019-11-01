@@ -1,0 +1,16 @@
+/*sidebar*/
+.panel .swiper-slide { padding: 0 56px 0 28px; }
+.sidebar-logo { font-size: 38px; font-weight: 200; margin-top: 15px; }
+.sidebar-logo a { color: #fff; }
+.sidebar-logo a span { font-weight: 700; color: #ff6251;}
+
+.sidebar-menu { padding: 15px 0; }
+.sidebar-menu h4 { font-size: 22px; }
+.sidebar-menu li  { display: block; margin-bottom: 10px; }
+.sidebar-menu li a { color: #fff; font-weight: 500; font-size: 18px; }
+
+.sidebar-chat-sec h4 { font-size: 22px; }
+.sidebar-chat-sec li { margin-bottom: 10px; }
+.sidebar-chat-sec li a { display: flex; align-items: center; }
+.sidebar-chat-sec li a img { width: 35px; height: 35px; border: 2px solid #ff6251; border-radius: 35px; }
+.sidebar-chat-sec li a span { color: #fff; margin: 0 0 7px 14px; font-size: 18px; font-weight: 500; border-bottom: 1px dotted #ff6251; }

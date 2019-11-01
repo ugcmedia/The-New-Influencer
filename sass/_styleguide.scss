@@ -1,0 +1,174 @@
+#styleguide {
+
+	section {
+		margin: $grid-gutter-width*2 0;
+	}
+
+	#fonts,
+	#breakpoints,
+	#colors {
+		list-style: none;
+		margin: $grid-gutter-width 0;
+		padding: 0;
+
+		li {
+			padding: 0;
+		}
+	}
+
+	#fonts {
+
+		li {
+			display: block;
+
+			&.heading {
+				&:after {
+					font-family: $headings-font-family;
+					content: '#{$headings-font-family}';
+					display: inline-block;
+				}
+			}
+
+			&.body {
+				&:after {
+					font-family: $font-family-base;
+					content: '#{$font-family-base}';
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	#breakpoints {
+
+		li {
+			display: block;
+
+			&.sm {
+				&:after {
+					content: "#{$screen-sm} to #{$screen-sm-max}";
+					display: inline-block;
+				}
+			}
+
+			&.md {
+				&:after {
+					content: "#{$screen-md} to #{$screen-md-max}";
+					display: inline-block;
+				}
+			}
+
+			&.lg {
+				&:after {
+					content: "#{$screen-lg} to #{$screen-lg-max}";
+					display: inline-block;
+				}
+			}
+
+			&.xl {
+				&:after {
+					content: "#{$screen-xl}";
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	#colors {
+
+		li {
+			padding: $spacer;
+			text-align: center;
+			color: $white;
+			margin-bottom: $spacer;
+
+			&.primary {
+				background-color: $primary;
+				padding: $spacer*3 $spacer;
+				font-size: fontsize(20);
+
+				&:after {
+					content: '#{$primary}';
+					display: block;
+				}
+			}
+
+			&.secondary {
+				background-color: $secondary;
+				padding: $spacer*3 $spacer;
+				font-size: fontsize(20);
+
+				&:after {
+					content: '#{$secondary}';
+					display: block;
+				}
+			}
+
+			&.success {
+				background-color: $success;
+
+				&:after {
+					content: '#{$success}';
+					display: block;
+				}
+			}
+
+			&.warning {
+				background-color: $warning;
+
+				&:after {
+					content: '#{$warning}';
+					display: block;
+				}
+			}
+
+			&.danger {
+				background-color: $danger;
+
+				&:after {
+					content: '#{$danger}';
+					display: block;
+				}
+			}
+
+			&.info {
+				background-color: $info;
+
+				&:after {
+					content: '#{$info}';
+					display: block;
+				}
+			}
+
+			&.light {
+				background-color: $light;
+				color: $body-color;
+
+				&:after {
+					content: '#{$light}';
+					display: block;
+					color: $body-color;
+				}
+			}
+
+			&.dark {
+				background-color: $dark;
+
+				&:after {
+					content: '#{$dark}';
+					display: block;
+				}
+			}
+
+			&.body {
+				background-color: $body-color;
+
+				&:after {
+					content: '#{$body-color}';
+					display: block;
+				}
+			}
+
+		}
+	}
+}

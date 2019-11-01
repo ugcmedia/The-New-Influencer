@@ -331,7 +331,7 @@ $(document).ready(function () {
 		var swipersliderteam = new Swiper ('.swiper-container-lp', {
 			direction: 'horizontal',
 			effect: 'slide',
-			slidesPerView: 8,
+			slidesPerView: 4,
 			spaceBetween: 10,
 			pagination: {
 			el: '.swiper-pagination-lp'
@@ -341,7 +341,7 @@ $(document).ready(function () {
 		var swipersliderteam = new Swiper ('.swiper-container-lp', {
 			direction: 'horizontal',
 			effect: 'slide',
-			slidesPerView: 8,
+			slidesPerView: 4,
 			spaceBetween: 10,
 			pagination: {
 			el: '.swiper-pagination-lp'

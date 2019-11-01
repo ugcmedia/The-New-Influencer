@@ -245,7 +245,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
         if(this.next()){
             setTimeout(function(){
                 this.printQuestion();
-            }.bind(this), 300);
+            }.bind(this), 7000);                                                       
         } else {
             this.parameters.eventList.onSubmitForm(this);
         }

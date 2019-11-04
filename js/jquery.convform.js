@@ -102,7 +102,7 @@ ConvState.prototype.printQuestion = function(){
                     $(this.wrapper).find('#messages').append(messageObj);
                     this.scrollDown();
                     this.printQuestion();
-                }.bind(this),200);
+                }.bind(this),5000);                                                                    
             } else {
                 this.parameters.eventList.onSubmitForm(this);
             }

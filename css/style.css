@@ -1105,13 +1105,15 @@ body.panel-closing .views {
   margin-right: -30%; }
 
 .slider-caption h2 {
-  width: 90%;
+  width: 100%;
   display: block;
+  text-align: center;
   margin: 0 0 10px 0;
   padding: 0px;
-  font-size: 28px;
+  font-size: 37px;
+  margin-bottom: 30px;
   line-height: 1.2;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: 0.5px;
   color: #fff; }
 

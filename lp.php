@@ -14,7 +14,6 @@
 <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&display=swap" rel="stylesheet"> 
 </head>
 
-
 <?php
 $strJsonFileContents = file_get_contents("members.json");	
 $json_data = json_decode($strJsonFileContents, true);
@@ -22,65 +21,56 @@ $json_data = json_decode($strJsonFileContents, true);
 $member_id=0;
 $member_pic='';   
 //print_r($json_data['Members']);	        
-?>  
+?>
 <body id="mobile_wrap">
 
   <div class="panel-overlay"></div>
 
-  <!-- Left panel -->
+  <!-- Start of Left Slide-out Panel -->
   <div class="panel panel-left panel-reveal">
                   <!-- Slider -->
                  <div class="swiper-container-subnav multinav">
                     <div class="swiper-wrapper">
-      <div class="swiper-slide">    
-        <nav class="main_nav_icons_inline_3">
+      <div class="swiper-slide">
+        <nav class="main_nav_icons_inline_3 btn-access">
         <ul>
-        <li><a href="lp.php"><img src="images/icons/orange/home.png" alt="" title="" /><span>Home</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/lips.png" alt="" title="" /><span>Members</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/chat.png" alt="" title="" /><span>Chat</span></a></li>
+        <li><a href=""><img src="images/icons/orange/home.png" alt="" title="" /><span>Home</span></a></li>
+        <li><a href=""><img src="images/icons/orange/lips.png" alt="" title="" /><span>Members</span></a></li>
+        <li><a href=""><img src="images/icons/orange/chat.png" alt="" title="" /><span>Chat</span></a></li>
         
-        <li><a href="lp.php"><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>    
+        <li><a href=""><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
+        <li><a href=""><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
+        <li><a href=""><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>    
 
-        <li><a href="lp.php"><img src="images/icons/orange/badgirls.png" alt="" title="" /><span>Bad Girls</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/babes.png" alt="" title="" /><span>Babes</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/cuff.png" alt="" title="" /><span>Sex</span></a></li>
+        <li><a href=""><img src="images/icons/orange/badgirls.png" alt="" title="" /><span>Bad Girls</span></a></li>
+        <li><a href=""><img src="images/icons/orange/babes.png" alt="" title="" /><span>Babes</span></a></li>
+        <li><a href=""><img src="images/icons/orange/cuff.png" alt="" title="" /><span>Sex</span></a></li>
         
-        <li><a href="lp.php"><img src="images/icons/orange/dilldo.png" alt="" title="" /><span>Shop</span></a></li>    
-        <li><a href="lp.php"><img src="images/icons/orange/toys.png" alt="" title="" /><span>Toys</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/sexdate.png" alt="" title="" /><span>Sex Date</span></a></li>
+        <li><a href=""><img src="images/icons/orange/dilldo.png" alt="" title="" /><span>Shop</span></a></li>    
+        <li><a href=""><img src="images/icons/orange/toys.png" alt="" title="" /><span>Toys</span></a></li>
+        <li><a href=""><img src="images/icons/orange/sexdate.png" alt="" title="" /><span>Sex Date</span></a></li>
         
-        <li><a href="lp.php"><img src="images/icons/orange/anal.png" alt="" title="" /><span>Anal</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/hardcore.png" alt="" title="" /><span>SNM</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/shoes.png" alt="" title="" /><span>Fetish</span></a></li> 
+        <li><a href=""><img src="images/icons/orange/anal.png" alt="" title="" /><span>Anal</span></a></li>
+        <li><a href=""><img src="images/icons/orange/hardcore.png" alt="" title="" /><span>SNM</span></a></li>
+        <li><a href=""><img src="images/icons/orange/shoes.png" alt="" title="" /><span>Fetish</span></a></li> 
         </ul>
         </nav>
       </div>  
         </div>
     </div>
 </div>
-<!-- End of Left panel -->
-  <!-- Right panel -->
-  <div id="panel-right"></div>
-  <!-- Bottom panel -->
-  <div id="panel-bottom"></div>
+<!-- End of Left Slide-out Panel -->
 
 
     <div class="views">
-
       <div class="view view-main">
-
-
-
         <div class="pages">
-
           <div data-page="lp" class="page homepage">
             <div class="page-content">
       
                 <div class="navbar navbar--page">
                   <div class="navbar__col navbar__col--title">
-                    <a href="index.php"><img src="images/logo.png"></a>
+                    <a href="index.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/logo.png"></a>
                   </div>
                   <div class="navbar__col navbar__col--icon-menu">
                     <ul>
@@ -141,153 +131,27 @@ $member_pic='';
                               </div>
                               <div class="swiper-slide lp-slideitem-block btn-access">
                                 <a href="#"><img src="images/circle/img_012.jpg" alt="" title="" /></a>
-                              </div>            
+                              </div>
                             </div>
                           </div>
 
                           <div class="lp-listint-titlebox">
-              
+
                             <div class="right-box btn-access">
                               <h3><a href="#">See More Girls</a></h3>
                             </div>
                           </div>
                         </div>
                       </div>
-                  <!-- Team-box -->
+
+                  <!-- Member Section -->
                       <div class="team-container-team">
                         <div class="left-box">
-                          <h3 >Females Online in <span class="city"></span></h3>
+                          <h3 >Females near <span class="city"></span></h3>
                         </div>
                         <div class="team-wrapper">
-                          <!----
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1001/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1001</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1002/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1002</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1003/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1003</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1004/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1004</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1005/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1005</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1006/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1006</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1007/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1007</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1008/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1008</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1009/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1009</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1010/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1010</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1011/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1011</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1012/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1012</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1013/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1013</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1014/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1014</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1015/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1015</strong><span>Current City</span>
-                            </a>
-                          </div>
-                          <div class="team-block">
-                            <a href="lp-catbot.php" data-view=".view-main">
-                              <div class="img-box">
-                                <img src="images/model/1016/avatar.jpg" alt="" title="" />
-                              </div>
-                              <strong>1016</strong><span>Current City</span>
-                            </a>
-                          </div>---->  
+
+                          <!-- start of for loop to generate each member avatar -->
                            <?php
                                 for($i=0;$i<count($json_data['Members']);$i++)
                                 {
@@ -303,20 +167,20 @@ $member_pic='';
                                             $member_avtar_img_url=ltrim($avtar_img_url,'/');
 
                                             $member_avtar_img_arr=explode('.',$member_avtar_img_url);           
-                                            $member_avtar_img=$member_avtar_img_arr[0].'.'.'jpg';           
-
-                                                   
+                                            $member_avtar_img=$member_avtar_img_arr[0].'.'.'jpg'; 
                                           }  
                                         }    
-                                                    
-                                       
                            ?>
+
+                           <!-- End of for loop to generate each member avatar -->
+
                            <div class="team-block">
-                            <a href="lp-catbot.php?id=<?php echo $memeber_id;?>" data-view=".view-main">           
+                            <a href="lp-catbot.php?id=<?php echo $memeber_id;?>&<?php echo http_build_query($_REQUEST); ?>" data-view=".view-main">         
+                              
                               <div class="img-box">				
-                                <img src="<?php echo $member_avtar_img;?>" alt="" title="" />                      		                                    
+                                <img src="<?php echo $member_avtar_img;?>" alt="" title=""/>                      		                                    
                               </div>
-                              <strong><?php echo $member_name;?></strong><span class="city">Current City</span>           
+                              <strong><?php echo $member_name;?></strong><span><?php echo $member_name;?></span>           
                             </a>
                           </div>      
                           <?php  			
@@ -338,14 +202,12 @@ $member_pic='';
               </div>
           </div>
         </div>
-
-
-
       </div>
     </div>
   </div>
 
-<!-- Start of Modal for iPhone -->
+
+<!-- Modal for iFrame -->
 <div class="cd-panel from-bottom">
       <div class="cd-panel-container">
         <header class="cd-panel-header">
@@ -358,27 +220,18 @@ $member_pic='';
         </div>
       </div>
     </div>
-<!-- End of Modal for iPhone -->
+<!-- Modal for iFrame -->
 
-    <!-- Login Popup -->
-    <div id="popup-login"></div>
-
-    <!-- Register Popup -->
-    <div id="popup-signup"></div>
-  
-    <!-- Forgot Password Popup -->
-    <div id="popup-forgot"></div>
-
-    <!-- Social Icons Popup -->
-    <div id="popup-social"></div>
-    
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.validate.min.js" ></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/jquery.custom.js"></script>
 <script src="https://geoip.joinsafelyonline.com/"></script>
+<script src="js/iframe.resizer.min.js"></script>
+<script>$('iframe').iFrameResize({checkOrigin: false});</script>
 
-        <!-- End of GEO Location -->
+
+<!-- End of GEO Location -->
         <script src="https://geoip.joinsafelyonline.com/"></script>
         <script>
             $(document).ready(function () {
@@ -392,45 +245,29 @@ $member_pic='';
                 }
             });
         </script>
-        <!-- End of GEO Location -->
-
-        <script> 
-            $(document).ready(function($){
-            'use strict';
-            
-            $('.btn-access').on('click', function(event){
-              event.preventDefault();
-              $('.cd-panel').addClass('is-visible');
-            });
-            
-            $('.cd-panel-close').on('click', function(event){
-              if( $(event.target).is('.cd-panel') || $(event.target).is('.cd-panel-close') ) { 
-                $('.cd-panel').removeClass('is-visible');
-                event.preventDefault();
-              }
-            });
-            ;
-        </script>
+<!-- End of GEO Location -->
 
 
-        <!-- Start of Sript for iframe -->
-  <script>
-    $(document).ready(function($){
-  'use strict';
-  
-  $('.btn-access').on('click', function(event){
-    event.preventDefault();
-    $('.cd-panel').addClass('is-visible');
-  });
-  
-  $('.cd-panel-close').on('click', function(event){
-    if( $(event.target).is('.cd-panel') || $(event.target).is('.cd-panel-close') ) { 
-      $('.cd-panel').removeClass('is-visible');
-      event.preventDefault();
-    }
-  });
-});
-  </script>
 <!-- Start of Sript for iframe -->
+        <script>
+          $(document).ready(function($){
+        'use strict';
+        
+        $('.btn-access').on('click', function(event){
+          event.preventDefault();
+          $('.cd-panel').addClass('is-visible');
+        });
+        
+        $('.cd-panel-close').on('click', function(event){
+          if( $(event.target).is('.cd-panel') || $(event.target).is('.cd-panel-close') ) { 
+            $('.cd-panel').removeClass('is-visible');
+            event.preventDefault();
+          }
+        });
+      });
+        </script>
+<!-- End of Sript for iframe -->
+
+
   </body>
 </html>

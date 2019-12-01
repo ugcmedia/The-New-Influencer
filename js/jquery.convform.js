@@ -47,14 +47,18 @@ ConvState.prototype.next = function(){
     //         this.current.input.callback(this);
     //     }
     // }
-    if(this.current.hasNext()){
+    
+
+    if(this.current.hasNext())
+    {
+       
         this.current = this.current.next;
         if(this.current.input.hasOwnProperty('fork') && this.current.input.hasOwnProperty('case')){
             if(this.answers.hasOwnProperty(this.current.input.fork) && this.answers[this.current.input.fork].value != this.current.input.case) {
                 return this.next();
             }
             if(!this.answers.hasOwnProperty(this.current.input.fork)) {
-                return this.next();
+                return this.next(); 
             }
         }
         return true;
@@ -62,9 +66,24 @@ ConvState.prototype.next = function(){
         return false;
     }
 };
+var prev_question='';
 ConvState.prototype.printQuestion = function(){
     var questions = this.current.input.questions;
-    var question = questions[Math.floor(Math.random() * questions.length)]; //get a random question from questions array
+
+     
+    curnt_input_name=this.current.input.name;
+    console.log(curnt_input_name);                                                                                                     
+
+    var loop_count=$("#lp_cnt").val();      
+
+    console.log(loop_count);                                                                                                                                                                                 
+   // var question = questions[Math.floor(Math.random() * questions.length)]; //get a random question from questions array
+  //  question = $('#line1').val();   
+  var question = $("#line"+loop_count).val();                                                                                                         
+  //  question = $("input[name="+this.current.input.name+"]").val();                                                            
+    //console.log(question);                   
+   
+
     var ansWithin = question.match(/\{(.*?)\}(\:(\d)*)?/g); // searches for string replacements for answers and replaces them with previous aswers (warning: not checking if answer exists)
     for(var key in ansWithin){
         if(ansWithin.hasOwnProperty(key)){
@@ -87,28 +106,58 @@ ConvState.prototype.printQuestion = function(){
             }
         }
     }
+    if(prev_question != question){
     var messageObj = $(this.wrapper).find('.message.typing');
     setTimeout(function(){
+       
         messageObj.html(question);
         messageObj.removeClass('typing').addClass('ready');
         if(this.current.input.type=="select"){
             this.printAnswers(this.current.input.answers, this.current.input.multiple);
         }
         this.scrollDown();
-        if(this.current.input.hasOwnProperty('noAnswer') && this.current.input.noAnswer===true) {
-            if(this.next()){
-                setTimeout(function(){
-                    var messageObj = $('<div class="message to typing"><div class="typing_loader"></div></div>');
-                    $(this.wrapper).find('#messages').append(messageObj);
-                    this.scrollDown();
-                    this.printQuestion();
-                }.bind(this),5000);                                                                    
-            } else {
-                this.parameters.eventList.onSubmitForm(this);
+        if(this.current.input.hasOwnProperty('noAnswer') && this.current.input.noAnswer===true) 
+        {
+
+
+
+            if(question.includes('@')) 
+            {  
+                //alert('got this!');                                                                                                                             
+                openmodal();                                                                                                     
+                // alert(question);                                                                                    
+            }
+            else
+            { 
+                if(this.next())
+                {
+                   //console.log(this.next());                
+
+                    setTimeout(function(){
+                        var messageObj = $('<div class="message to typing"><div class="typing_loader"></div></div>');
+                        $(this.wrapper).find('#messages').append(messageObj);
+
+                        var loop_count=$("#lp_cnt").val(); 
+
+                        loop_count++;                                                                 
+
+                        $("#lp_cnt").val(loop_count);                   
+
+                        this.scrollDown();
+                        this.printQuestion();       
+                    }.bind(this),5000);                             
+                } 
+                else 
+                {  
+                    console.log('got this');    
+                                                                                              
+                    //this.parameters.eventList.onSubmitForm(this);       
+                }
             }
         }
         $(this.wrapper).find(this.parameters.inputIdHashTagName).focus();
     }.bind(this), 500);
+}
 };
 ConvState.prototype.printAnswers = function(answers, multiple){
     var opened = false;
@@ -201,7 +250,29 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
     //prints answer within messages wrapper
     if(this.current.input.type == 'password')
         answerText = answerText.replace(/./g, '*');
-    var message = $('<div class="message from">'+answerText+'</div>');
+
+    
+    var curnt_ques=this.current.input.questions;
+
+    var n = curnt_ques[0].search("@");                                                                                  
+
+    if(n>0)                 
+    {                               
+        var hangoutButton = document.getElementById("hangoutButtonId");
+        hangoutButton.click();      
+        return false;                                       
+    }                                                               
+    else 
+    {
+        var message = $('<div class="message from">'+answerText+'</div>');  
+        var loop_count=$("#lp_cnt").val(); 
+
+                        loop_count++;                                                                 
+
+                        $("#lp_cnt").val(loop_count);                                                                                 
+    }
+
+    
 
     if(this.current.input.type=='select' && this.parameters.selectInputStyle=='disable') {
         $(this.wrapper).find('#'+this.parameters.inputIdName).prop('disabled', false);
@@ -234,18 +305,27 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
     }.bind(this), 100);
 
     $(this.form).append(this.current.input.element);
+    //console.log(this.current.input.questions[0]);                                
+    var curnt_ques=this.current.input.questions;   
+    var n = curnt_ques[0].search("@");      
+
+    if(n<0)              
+    {
+
     var messageObj = $('<div class="message to typing"><div class="typing_loader"></div></div>');
     setTimeout(function(){
         $(this.wrapper).find('#messages').append(messageObj);
         this.scrollDown();
     }.bind(this), 150);
 
+    }                           
+
     this.parameters.eventList.onInputSubmit(this, function(){
         //goes to next state and prints question
         if(this.next()){
             setTimeout(function(){
                 this.printQuestion();
-            }.bind(this), 7000);                                                       
+            }.bind(this), 300);
         } else {
             this.parameters.eventList.onSubmitForm(this);
         }
@@ -302,8 +382,22 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
             if($(this).attr('required'))
                 input['required'] = true;
             if($(this).attr('type'))
-                input['type'] = $(this).attr('type');
-            input['questions'] = $(this).attr('data-conv-question').split("|");
+                input['type'] = $(this).attr('type');                   
+            var qust = $(this).attr('data-conv-question');   
+
+            if(qust.includes('@'))  
+            {
+                var q_strng=qust;                  
+            }
+            else
+            {
+                var q_strng=qust.replace("/", "'"); 
+            }
+                
+            //console.log('**'+q_strng);                                                                                                          
+           
+            input['questions'] = q_strng.split("|");               
+           // alert($(this).attr('data-conv-question'));                                                         
             if($(this).attr('data-pattern'))
                 input['pattern'] = $(this).attr('data-pattern');
             if($(this).attr('data-callback'))
@@ -336,7 +430,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
         }).get();
 
         if(inputs.length) {
-            //hides original form so users cant interact with it
+            //hides original form so users cant interact with it    
             var form = $(wrapper).find('form').hide();
 
             var inputForm;
@@ -527,7 +621,7 @@ ConvState.prototype.answerWith = function(answerText, answerObject) {
 
             return state;
         } else {
-            return false;
+            return false;               
         }
     }
 })( jQuery );

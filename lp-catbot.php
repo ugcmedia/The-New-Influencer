@@ -74,56 +74,52 @@ if(isset($_GET['id']))
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png">
 <title>Hookup | Get Laid Tonight!</title>
 <link rel="stylesheet" href="css/swiper.css">
 <link rel="stylesheet" href="css/simplelightbox.css">
 <link rel="stylesheet" href="css/style.min.css">
 <link rel="stylesheet" href="dist/css/main.min.css">
+<link rel="stylesheet" href="css/spanel.css">
 <link href="https://fonts.googleapis.com/css?family=Assistant:200,400,700&display=swap" rel="stylesheet"> 
 </head>
 <body id="mobile_wrap">
 
   <div class="panel-overlay"></div>
 
-  <!-- Left panel -->
+  <!-- Start of Left Slide-out Panel -->
   <div class="panel panel-left panel-reveal">
                   <!-- Slider -->
                  <div class="swiper-container-subnav multinav">
                     <div class="swiper-wrapper">
-      <div class="swiper-slide">    
-        <nav class="main_nav_icons_inline_3">
+      <div class="swiper-slide">
+        <nav class="main_nav_icons_inline_3 btn-access">
         <ul>
-        <li><a href="lp.php"><img src="images/icons/orange/home.png" alt="" title="" /><span>Home</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/lips.png" alt="" title="" /><span>Members</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/chat.png" alt="" title="" /><span>Chat</span></a></li>
+        <li><a href="javascript:void()"><img src="images/icons/orange/home.png" alt="" title="" /><span>Home</span></a></li>
+        <li><a href=""><img src="images/icons/orange/lips.png" alt="" title="" /><span>Members</span></a></li>
+        <li><a href=""><img src="images/icons/orange/chat.png" alt="" title="" /><span>Chat</span></a></li>
         
-        <li><a href="lp.php"><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>    
+        <li><a href=""><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
+        <li><a href=""><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
+        <li><a href=""><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>    
 
-        <li><a href="lp.php"><img src="images/icons/orange/badgirls.png" alt="" title="" /><span>Bad Girls</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/babes.png" alt="" title="" /><span>Babes</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/cuff.png" alt="" title="" /><span>Sex</span></a></li>
+        <li><a href=""><img src="images/icons/orange/badgirls.png" alt="" title="" /><span>Bad Girls</span></a></li>
+        <li><a href=""><img src="images/icons/orange/babes.png" alt="" title="" /><span>Babes</span></a></li>
+        <li><a href=""><img src="images/icons/orange/cuff.png" alt="" title="" /><span>Sex</span></a></li>
         
-        <li><a href="lp.php"><img src="images/icons/orange/dilldo.png" alt="" title="" /><span>Shop</span></a></li>    
-        <li><a href="lp.php"><img src="images/icons/orange/toys.png" alt="" title="" /><span>Toys</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/sexdate.png" alt="" title="" /><span>Sex Date</span></a></li>            
+        <li><a href=""><img src="images/icons/orange/dilldo.png" alt="" title="" /><span>Shop</span></a></li>    
+        <li><a href=""><img src="images/icons/orange/toys.png" alt="" title="" /><span>Toys</span></a></li>
+        <li><a href=""><img src="images/icons/orange/sexdate.png" alt="" title="" /><span>Sex Date</span></a></li>
         
-        <li><a href="lp.php"><img src="images/icons/orange/anal.png" alt="" title="" /><span>Anal</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/hardcore.png" alt="" title="" /><span>SNM</span></a></li>
-        <li><a href="lp.php"><img src="images/icons/orange/shoes.png" alt="" title="" /><span>Fetish</span></a></li> 
+        <li><a href=""><img src="images/icons/orange/anal.png" alt="" title="" /><span>Anal</span></a></li>
+        <li><a href=""><img src="images/icons/orange/hardcore.png" alt="" title="" /><span>SNM</span></a></li>
+        <li><a href=""><img src="images/icons/orange/shoes.png" alt="" title="" /><span>Fetish</span></a></li> 
         </ul>
         </nav>
       </div>  
         </div>
     </div>
 </div>
-<!-- End of Left panel -->
-  <!-- Right panel -->
-  <div id="panel-right"></div>
-  <!-- Bottom panel -->
-  <div id="panel-bottom"></div>
+<!-- End of Left Slide-out Panel -->
 
   <div class="views">
     <div class="view view-main">
@@ -132,11 +128,11 @@ if(isset($_GET['id']))
           <div class="page-content">
             <div class="navbar navbar--page">
               <div class="navbar__col navbar__col--title">
-                <a href="lp.php"><img class="logo" src="images/logo.png"></a>
+                <a href="javascript:void() "onclick="history.back()"><img class="logo" src="images/logo.png"></a>
               </div>
               <div class="navbar__col navbar__col--icon-menu">
                 <ul>
-                  <li><a href="#" class="premium-btn">PREMIUM</a></li>
+                  <li><a href="#" class="premium-btn btn-access">PREMIUM</a></li>
                   <li><a href="#" data-panel="left" class="open-panel">
                       <span></span>
                       <span></span>
@@ -150,7 +146,7 @@ if(isset($_GET['id']))
               <div class="profile-banner">
                 <div class="layout_fullwidth_padding">
                   <div class="profile-banner-back-btn">
-                    <a href="lp.php"><img src="images/back-btn.png"></a>
+                    <a href="javascript:void() "onclick="history.back()"><img src="images/back-btn.png"></a>
                   </div>
                 </div>
                 <div class="profile-banner-img">
@@ -174,16 +170,15 @@ if(isset($_GET['id']))
                       <div class="section profile-header flex">
                          <div class="profile-info-wrap">
                           <div class="model-age"><b>Age:</b>&nbsp;<?php echo $member_age;?></div>   
-                          <div class="model-status"><b>Status:</b>&nbsp;<?php echo $member_status;?></div>          
-                          <div class="city"><b>City:</b> Current City</div>
+                          <div class="model-status"><b>Status:</b>&nbsp;<?php echo $member_status;?></div>
                           <div class="model-location"><b>Location:</b>
-                            <a class="profile-location" href="#"> See Location</a>
+                            <a class="profile-location" href="#"><span class="city">Current City</span></a>
                           </div>
                         </div>              
                         <div class="lp-single-bottombtn">
                           <ul>
-                            <li><a href="conversation.php?id=<?php echo $member_id;?>">REQUEST SEX</a></li>
-                            <li><a href="conversation.php?id=<?php echo $member_id;?>">START CHAT</a></li>
+                            <li><a href="conversation.php?id=<?php echo $memeber_id;?>&<?php echo http_build_query($_REQUEST); ?>">REQUEST A DATE</a></li>
+                            <li><a href="conversation.php?id=<?php echo $memeber_id;?>&<?php echo http_build_query($_REQUEST); ?>">START CHAT</a></li> 
                           </ul>
                         </div>
                       </div>
@@ -215,7 +210,7 @@ if(isset($_GET['id']))
 
                                     if($img_cntr==$member_pic_arr_count)        
                                     {
-                                        echo "<li><a href='conversation.php?id=$member_id'><img src='$member_image_name'><h3>More Photos</h3></a></li>";          
+                                        echo "<li class='btn-access'><a href='#'><img src='$member_image_name'><h3>More Photos</h3></a></li>";          
                                     }  
                                     else      
                                     {
@@ -231,8 +226,8 @@ if(isset($_GET['id']))
                         </div> 
                         <div class="lp-single-bottombtn bottom">      
                           <ul>
-                            <li><a href="conversation.php?id=<?php echo $member_id;?>">REQUEST SEX</a></li>
-                            <li><a href="conversation.php?id=<?php echo $member_id;?>">START CHAT</a></li>    
+                            <li><a href="conversation.php?id=<?php echo $memeber_id;?>&<?php echo http_build_query($_REQUEST); ?>">REQUEST A DATE</a></li>
+                            <li><a href="conversation.php?id=<?php echo $memeber_id;?>&<?php echo http_build_query($_REQUEST); ?>">START CHAT</a></li>    
                           </ul>   
                         </div>                    
                       </div>
@@ -243,12 +238,66 @@ if(isset($_GET['id']))
           </div>
       </div>
     </div>
+  </div>
   
+<!-- Start of iFrame Modal  -->
+<div class="cd-panel from-bottom">
+      <div class="cd-panel-container">
+        <header class="cd-panel-header">
+          <a href="javascript:void(0)" class="cd-panel-close">Close</a>
+        </header>
+        <div class="cd-panel-content">
+          <div class="frame-container container">
+                        <iframe id="frame" src="//<?php echo $_REQUEST["a_aid"]; ?>.joinsafelyonline.com/routes/<?php echo $_REQUEST["a_aid"]; ?>/?ofid=442&<?php echo http_build_query($_REQUEST); ?>" frameborder="0" scrolling="no"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- End of iFrame Modal  -->
+
     
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.validate.min.js" ></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/simple-lightbox.js"></script>
 <script src="js/jquery.custom.js"></script>
+<script src="js/iframe.resizer.min.js"></script>
+<script>$('iframe').iFrameResize({checkOrigin: false});</script>
+
+        <!-- End of GEO Location -->
+        <script src="https://geoip.joinsafelyonline.com/"></script>
+        <script>
+            $(document).ready(function () {
+                var city = geoip_city();
+                var state = geoip_region();
+
+                if (!city) {
+                    $('.city').html('In Your Area');
+                } else {
+                    $('.city').html(city);
+                }
+            });
+        </script>
+        <!-- End of GEO Location -->
+
+        <!-- Start of Sript for iframe -->
+        <script>
+          $(document).ready(function($){
+        'use strict';
+        
+        $('.btn-access').on('click', function(event){
+          event.preventDefault();
+          $('.cd-panel').addClass('is-visible');
+        });
+        
+        $('.cd-panel-close').on('click', function(event){
+          if( $(event.target).is('.cd-panel') || $(event.target).is('.cd-panel-close') ) { 
+            $('.cd-panel').removeClass('is-visible');
+            event.preventDefault();
+          }
+        });
+      });
+        </script>
+<!-- End of Sript for iframe -->
   </body>
 </html>

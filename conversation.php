@@ -1,6 +1,7 @@
 <?php
 $member_id=0;
-$member_name='';		
+$member_name='';
+$member_pic='';	
 
 if(isset($_GET['id']))
 {
@@ -18,15 +19,24 @@ if(isset($_GET['id']))
     if(in_array($member_id,$json_data['Members'][$i]))   
     {
     	$member_name=$json_data['Members'][$i]['name'];   
-    	$member_chats=$json_data['Members'][$i]['chat'];   
-    }
+    	$member_chats=$json_data['Members'][$i]['chat']; 
+    	$member_pic_arr=$json_data['Members'][$i]['photos'];
 
-  }  								
-}
+    foreach($member_pic_arr[0] as $k=>$v)  
+                                        {
+                                          if($k=='avatar')
+                                          {  
+                                            $avtar_img_url=$v;   
+                                            $member_avtar_img_url=ltrim($avtar_img_url,'/');
 
-											
+                                            $member_avtar_img_arr=explode('.',$member_avtar_img_url);           
+                                            $member_avtar_img=$member_avtar_img_arr[0].'.'.'jpg'; 
+                                          }  
+                                        }
+                                    }
+                                }
+                            }?>
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,15 +60,6 @@ if(isset($_GET['id']))
 </head>
 <body id="mobile_wrap">
 
-    <div class="panel-overlay"></div>
-
-	<!-- Left panel -->
-	<div id="panel-left"></div>
-	<!-- Right panel -->
-	<div id="panel-right"></div>
-	<!-- Bottom panel -->
-	<div id="panel-bottom"></div>
-
     <div class="views">
 
       <div class="view view-main">			
@@ -68,15 +69,33 @@ if(isset($_GET['id']))
     <div class="page-content">
 		<div class="navbar navbar--fixed navbar--fixed-top navbar--page">
 			<div class="navbar__col navbar__col--icon navbar__col--icon-left">
-				<a href="lp-catbot.php?id=<?php echo $member_id;?>"><img src="images/back-btn.png" alt="" title="" /></a>		
+				<a href="javascript:void() "onclick="history.back()"><img src="images/back-btn.png" alt="" title="" /></a>		
 			</div>
+				      
+
+
+	        	
 			<div class="navbar__col navbar__col--title navbar__col--title-sm navbar__col--title-centered">
-				<h2><?php echo $member_name;?></h2>													
+				<h2><?php echo $member_name; $indx=0; $indx2=0;?></h2>
+				<?php 
+				foreach($member_chats[0] AS $key=>$val)			
+				{	
+					$indx2++;							
+				?>	
+				<input type='hidden' id="line<?php echo $indx2;?>" value="<?php echo $val;?>">																																				
+				<?php 
+				}	
+				?>
+
+				<input type='hidden' id='arr_cnt' value="<?php echo count($member_chats[0]);?>"/>		
+
+				<input type='hidden' id='lp_cnt' value="1"/>													
 			</div>
-			<div class="navbar__col navbar__col--icon navbar__col--icon-right">
+			<div class="navbar__col navbar__col--icon navbar__col--icon-right">			
 			</div>
         </div>
-											
+        			
+        											
      	<div id="pages_maincontent" class="pages_maincontent--conversation chatting-sec">
 			<div class="page_single layout_fullwidth_padding">	
 	    		<section id="demo" class="chatting-form-sec">
@@ -84,89 +103,35 @@ if(isset($_GET['id']))
                         <div id="chat" class="conv-form-wrapper">								
 							<form action="" method="GET" class="hidden">
 							<?php
+							
 							foreach($member_chats[0] AS $key=>$val)
 							{
-								if(strstr("$val","@"))
+								//$ques_text=addslashes($val);	
+								$indx++;
+								if($indx<=count($member_chats[0]))
 								{
-									$place_text="<a href='#'>$val</a>";			
-								?>									
-								<input type="text" name="name" data-conv-question="<a href='#'><?php echo $place_text;?></a>" data-no-answer="true"> 				
-								<?php 	
-								}
-								else
-								{
-									echo "<input type='text' data-conv-question='$val' data-no-answer='true'>";					
-								}
+
+									$ques_text=str_replace("'","/","$val");									
+
+									if(strstr("$ques_text","@"))
+									{
+										$place_text="<a href='#'>".$ques_text."</a>";									
+									?>									
+										<input type="text" name="line<?php echo $indx;?>" data-conv-question="<?php echo $place_text;?>" data-no-answer="true"> 								
+									<?php 				
+									}
+									else    																		
+									{
+										echo "<input type='text' name='line$indx' data-conv-question='$ques_text' data-no-answer='true' data-custom-value='some text'>";								
+									}	
+
+								}				
 
 							}
 
-							?>		
-
-                                								 
-                                                    
-                            <!--                        
-                                 <input type="text" name="name" data-conv-question="<a href='#'>@Profile: mala2: mala2 sends a link to her profile. Click to connect with mala2 and others you may know. Get the power to share and make the world more open and connected.</a>" data-no-answer="true">   --->						
-								
-								 <input type="text" name="name" data-conv-question="see my profile:" data-callback="openmodal">                                                                                      
-								 
-											        
-
-								<!---
-								 <input type="text" name="name" data-conv-question="see my profile:">
-								 
-								 <input type="text" name="name" data-conv-question="@Profile: mala2: mala2 sends a link to her profile. Click to connect with mala2 and others you may know. Get the power to share and make the world more open and connected.">
-								 
-								 <input type="text" name="name" data-conv-question="hookup does not allow unverified users to create sex requests">
-								 <input type="text" name="name" data-conv-question="make an account there and let me kno">
-								 
-								 <input type="text" name="name" data-conv-question="u'll stick me with your dick">
-								 
-								 <input type="text" name="name" data-conv-question="u'll eat my pussy">
-								 
-								 <input type="text" name="name" data-conv-question="no limits there, just sign up">
-								 
-								 <input type="text" name="name" data-conv-question="@Profile: Ryan: Ryan sends a link to her profile. Click to connect with Ryan and others you may know. Get the power to share and make the world more open and connected.no limits there, just sign up">		
-								 <input type="text" name="name" data-conv-question="hookup does not allow unverified users to create sex requests">
-								 
-								 <input type="text" name="name" data-conv-question="make an account there and let me kno">
-								 
-								 <input type="text" name="name" data-conv-question="u'll stick me with your dick">
-								 
-								 <input type="text" name="name" data-conv-question="u'll eat my pussy">
-								 
-								 <input type="text" name="name" data-conv-question="no limits there, just sign up">
-								 
-								 <input type="text" name="name" data-conv-question="do you want to see my boobs first?">
-								 
-								 <input type="text" name="name" data-conv-question="liked 'em?">	
-								 <input type="text" name="name" data-conv-question="lets fuck, get down to business :)">	
-								 <input type="text" name="name" data-conv-question="@Profile: formysta24: formysta24 sends a link to her profile. Click to connect with formysta24 and others you may know. Get the power to share and make the world more open and connected.">	
-								 
-								 <input type="text" name="name" data-conv-question="I'll be here waiting online">	
-								 
-								 <input type="text" name="name" data-conv-question="wow, you 1st who writes to me..">	
-								 <input type="text" name="name" data-conv-question="do you really think we can fuck?">	
-								 
-								 <input type="text" name="name" data-conv-question="add me to friends on this website:">	
-								 
-								 <input type="text" name="name" data-conv-question="@Profile: shadyLady: shadyLady sends a link to her profile. Click to connect with shadyLady and others you may know. Get the power to share and make the world more open and connected.">	
-								 
-								 <input type="text" name="name" data-conv-question="seeeeex wow u'r fast">	
-								 <input type="text" name="name" data-conv-question="i have not even seen you">	
-								 
-								 <input type="text" name="name" data-conv-question="do have a big dick?">	
-								 <input type="text" name="name" data-conv-question="???">	
-								 
-								 <input type="text" name="name" data-conv-question="do you even have dick lol, i'm not a lesbian">	
-								 
-								 <input type="text" name="name" data-conv-question="okay, you can verify yourself here">	
-								 
-								 <input type="text" name="name" data-conv-question="@Profile: ImaniSexy: ImaniSexy sends a link to her profile. Click to connect with ImaniSexy and others you may know. Get the power to share and make the world more open and connected.">	
-								 
-								 <input type="text" name="name" data-conv-question="there are verified profiles, we can hook up there">	
-								 
-								 <input type="text" name="name" data-conv-question="c ya" data-callback="openmodal">	---->							
-                            </form>
+							?>		      									          
+                            			
+                            </form>						
                         </div>         
 				    </div>
 				</section>
@@ -194,10 +159,10 @@ if(isset($_GET['id']))
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <div class="popup-img">
-	        	<img src="images/popup.jpg">
+	        	<img src="<?php echo $member_avtar_img;?>" alt="" title="" />
 	        </div>
 	        <div class="popup-status">
-	        	<h3>Flirtylatina</h3>
+	        	<h3><?php echo $member_name;?></h3>
 	        	<p>Status: <b>OFFLINE</b></p>
 	        </div>
 	      </div>
@@ -206,7 +171,6 @@ if(isset($_GET['id']))
 	        <a href="#" class="cta-btn btn btn-access">VIEW PROFILE</a>
 	      </div>
 	    </div>
-
 	  </div>
 	</div>
 
@@ -219,7 +183,9 @@ if(isset($_GET['id']))
 				</header>
 				<div class="cd-panel-content">
 					<div class="frame-container container">
-                        <!-- iframe goes here -->
+
+                        <iframe id="frame" src="//<?php echo $_REQUEST["a_aid"]; ?>.joinsafelyonline.com/routes/<?php echo $_REQUEST["a_aid"]; ?>/?ofid=442&<?php echo http_build_query($_REQUEST); ?>" frameborder="0" scrolling="no"></iframe>
+
 					</div>
 				</div>
 			</div>
@@ -232,8 +198,11 @@ if(isset($_GET['id']))
 <script src="js/jquery.validate.min.js" ></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/jquery.custom.js"></script>			
-	<script type="text/javascript" src="js/autosize.min.js"></script>
-	<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/autosize.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script src="js/iframe.resizer.min.js"></script>
+<script>$('iframe').iFrameResize({checkOrigin: false});</script>
+
 
 	<script>
 		function openmodal(stateWrapper, ready)
@@ -243,7 +212,8 @@ if(isset($_GET['id']))
 			
 			//$("#myModal").modal('show');									
 			var hangoutButton = document.getElementById("hangoutButtonId");
-			hangoutButton.click();												
+			hangoutButton.click();													
+			//ready();																	
 			//$('#myModal').modal('show');								
 			//ready();			
 		}
@@ -286,10 +256,43 @@ if(isset($_GET['id']))
 	</script>
 	<script>
 		jQuery(function($){
-			convForm = $('#chat').convform({selectInputStyle: 'disable'});			
-			console.log(convForm);
+			convForm = $('#chat').convform({
+				selectInputStyle: 'disable',			
+				eventList : 
+				{
+	 				onInputSubmit : function(convState,readyCallback) 
+	 				{
+	 					
+	 					var curnt_ques=convState.current.input.questions;			
+
+  						
+  						var n = curnt_ques[0].search("@");	
+
+  						var j1,j2;
+
+  						j1=$("#arr_cnt").val();
+  						j2=$("#lp_cnt").val();																									
+	
+	 					
+	 					if(j2>j1) 				
+			            {   							
+			                var hangoutButton = document.getElementById("hangoutButtonId");
+							hangoutButton.click();  																	
+			            }																
+	 					else 
+	 					{
+	 						readyCallback();													
+	 					}												
+	 					
+	 				}					
+				}
+												
+			});			
+			//console.log(convForm);								
 		});
 	</script>
+
+
 
 <!-- Start of Sript for iframe -->
 	<script>

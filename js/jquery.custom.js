@@ -331,22 +331,33 @@ $(document).ready(function () {
 		var swipersliderteam = new Swiper ('.swiper-container-lp', {
 			direction: 'horizontal',
 			effect: 'slide',
-			slidesPerView: 4,
+			slidesPerView: 10,
 			spaceBetween: 10,
 			pagination: {
 			el: '.swiper-pagination-lp'
+			},
+			breakpoints: {
+				1400: {
+                    slidesPerView: 7
+				},
+				767: {
+					slidesPerView: 5
+				},
+				460: {
+					slidesPerView: 3,
+				},
 			}
 		});
 		
-		var swipersliderteam = new Swiper ('.swiper-container-lp', {
-			direction: 'horizontal',
-			effect: 'slide',
-			slidesPerView: 4,
-			spaceBetween: 10,
-			pagination: {
-			el: '.swiper-pagination-lp'
-			}
-		}); 
+		// var swipersliderteam = new Swiper ('.swiper-container-lp', {
+		// 	direction: 'horizontal',
+		// 	effect: 'slide',
+		// 	slidesPerView: 4,
+		// 	spaceBetween: 10,
+		// 	pagination: {
+		// 	el: '.swiper-pagination-lp'
+		// 	}
+		// }); 
    }   
 /*-------------- Page Shop----------- */
    if (pageid == 'shop') {

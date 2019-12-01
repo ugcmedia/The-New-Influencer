@@ -84,6 +84,10 @@ gulp.task('translations', function() {
 
 gulp.task('default', ['watch']);
 
+gulp.task('watch:styles', function() {
+    gulp.watch('sass/**/*.scss',['styles']);
+});
+
 gulp.task('watch', function() {
     gulp.watch('sass/**/*.scss',['styles']);
     gulp.watch('js/**/[^_]*.js',['scripts']);

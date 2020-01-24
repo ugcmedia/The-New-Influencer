@@ -14,8 +14,6 @@ if(isset($_GET['id']))
   $strJsonFileContents = file_get_contents("members.json"); 
   $json_data = json_decode($strJsonFileContents, true);
 
-       
-
   //var_dump($json_data);             
 
   for($i=0;$i<count($json_data['Members']);$i++)
@@ -74,7 +72,7 @@ if(isset($_GET['id']))
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-<title>Hookup | Get Laid Tonight!</title>
+<title>Stephan Azevedo | Modern Influencer</title>
 <link rel="stylesheet" href="css/swiper.css">
 <link rel="stylesheet" href="css/simplelightbox.css">
 <link rel="stylesheet" href="css/style.min.css">
@@ -86,40 +84,28 @@ if(isset($_GET['id']))
 
   <div class="panel-overlay"></div>
 
-  <!-- Start of Left Slide-out Panel -->
+  <!-- Left panel -->
   <div class="panel panel-left panel-reveal">
                   <!-- Slider -->
                  <div class="swiper-container-subnav multinav">
                     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <nav class="main_nav_icons_inline_3 btn-access">
+        <nav class="main_nav_icons_inline_3">
         <ul>
-        <li><a href="javascript:void()"><img src="images/icons/orange/home.png" alt="" title="" /><span>Home</span></a></li>
-        <li><a href=""><img src="images/icons/orange/lips.png" alt="" title="" /><span>Members</span></a></li>
-        <li><a href=""><img src="images/icons/orange/chat.png" alt="" title="" /><span>Chat</span></a></li>
+        <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/home.png" alt="" title="" /><span>Home</span></a></li>
+        <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/lips.png" alt="" title="" /><span>Members</span></a></li>
+        <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/chat.png" alt="" title="" /><span>Chat</span></a></li>
         
-        <li><a href=""><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
-        <li><a href=""><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
-        <li><a href=""><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>    
-
-        <li><a href=""><img src="images/icons/orange/badgirls.png" alt="" title="" /><span>Bad Girls</span></a></li>
-        <li><a href=""><img src="images/icons/orange/babes.png" alt="" title="" /><span>Babes</span></a></li>
-        <li><a href=""><img src="images/icons/orange/cuff.png" alt="" title="" /><span>Sex</span></a></li>
-        
-        <li><a href=""><img src="images/icons/orange/dilldo.png" alt="" title="" /><span>Shop</span></a></li>    
-        <li><a href=""><img src="images/icons/orange/toys.png" alt="" title="" /><span>Toys</span></a></li>
-        <li><a href=""><img src="images/icons/orange/sexdate.png" alt="" title="" /><span>Sex Date</span></a></li>
-        
-        <li><a href=""><img src="images/icons/orange/anal.png" alt="" title="" /><span>Anal</span></a></li>
-        <li><a href=""><img src="images/icons/orange/hardcore.png" alt="" title="" /><span>SNM</span></a></li>
-        <li><a href=""><img src="images/icons/orange/shoes.png" alt="" title="" /><span>Fetish</span></a></li> 
+        <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
+        <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
+        <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>
         </ul>
         </nav>
       </div>  
         </div>
     </div>
 </div>
-<!-- End of Left Slide-out Panel -->
+<!-- End of Left panel -->
 
   <div class="views">
     <div class="view view-main">
@@ -241,7 +227,7 @@ if(isset($_GET['id']))
   </div>
   
 <!-- Start of iFrame Modal  -->
-<div class="cd-panel from-bottom">
+<!-- <div class="cd-panel from-bottom">
       <div class="cd-panel-container">
         <header class="cd-panel-header">
           <a href="javascript:void(0)" class="cd-panel-close">Close</a>
@@ -252,7 +238,7 @@ if(isset($_GET['id']))
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 <!-- End of iFrame Modal  -->
 
     

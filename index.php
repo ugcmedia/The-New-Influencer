@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-<title>Hookup | Get Laid Tonight!</title>
+<title>Stephan Azevedo | Modern Influencer</title>
 <link rel="stylesheet" href="css/swiper.css">
 <link rel="stylesheet" href="css/style.min.css">
 <link rel="stylesheet" href="dist/css/main.min.css">
@@ -30,19 +30,7 @@
 				
 				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/camera.png" alt="" title="" /><span>Photos</span></a></li>
 				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/live.png" alt="" title="" /><span>Live</span></a></li>
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>		
-
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/badgirls.png" alt="" title="" /><span>Bad Girls</span></a></li>
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/babes.png" alt="" title="" /><span>Babes</span></a></li>
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/cuff.png" alt="" title="" /><span>Sex</span></a></li>
-				
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/dilldo.png" alt="" title="" /><span>Shop</span></a></li>		
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/toys.png" alt="" title="" /><span>Toys</span></a></li>
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/sexdate.png" alt="" title="" /><span>Sex Date</span></a></li>
-				
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/anal.png" alt="" title="" /><span>Anal</span></a></li>
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/hardcore.png" alt="" title="" /><span>SNM</span></a></li>
-				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/shoes.png" alt="" title="" /><span>Fetish</span></a></li>	
+				<li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>"><img src="images/icons/orange/pin.png" alt="" title="" /><span>Near Me</span></a></li>
 				</ul>
 				</nav>
 			</div>	
@@ -93,8 +81,8 @@
                       <div class="swiper-slide" style="background-image:url(images/slide1.jpg);">
 		   
 			 <div class="slider-caption">
-			          <!-- <div class="slider-caption__line" data-swiper-parallax="-200%">01</div> -->
-				  <h2>Get Laid Tonight</h2>
+			          <div class="slider-caption__line" data-swiper-parallax="-200%">UGC Media</div>
+				  <h2>The New Influencer</h2>
 				  <div class="lp-single-bottombtn">
                           <ul>
                             <li><a href="lp.php?<?php echo http_build_query($_REQUEST); ?>">REQUEST A DATE</a></li>
@@ -146,7 +134,6 @@
       </div>
     </div>
 
-
     
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.validate.min.js" ></script>
@@ -154,3 +141,50 @@
 <script src="js/jquery.custom.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

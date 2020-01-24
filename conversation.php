@@ -47,7 +47,7 @@ if(isset($_GET['id']))
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 <link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-640x920.png">
-<title>Hookup | Chat Line</title>
+<title>Stephan Azevedo | Modern Influencer</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/swiper.css">
 <link rel="stylesheet" href="css/style.min.css">
